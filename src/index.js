@@ -1,7 +1,5 @@
 import "./style.css";
-import SearchIcon from './search.svg';
-
-
+import SearchIcon from "./search.svg";
 
 function WebsiteController(deafaultTerm) {
   const searchBtn = document.getElementById(`search-btn`);
@@ -41,8 +39,6 @@ function WebsiteController(deafaultTerm) {
   }
 
   function DomUpdate(weatherData) {
-    console.log(weatherData);
-
     const nameElement = document.getElementById("name");
     const regionElement = document.getElementById("region");
     const countryElement = document.getElementById("country");
@@ -70,7 +66,7 @@ function WebsiteController(deafaultTerm) {
     windDirElement.textContent = `Wind Direction: ${weatherData.windDir}`;
     windKphElement.textContent = `${weatherData.windK} km/h`;
     windMphElement.textContent = `${weatherData.windM} mph`;
-    }
+  }
 
   const weatherCleaner = (data) => {
     return new Weather(
@@ -115,7 +111,7 @@ function WebsiteController(deafaultTerm) {
       } catch (error) {
         console.error(`Problem handling weather!`, error);
       }
-  }
+    }
   }
 
   searchBtn.addEventListener(`click`, async () => {
@@ -130,21 +126,21 @@ function WebsiteController(deafaultTerm) {
   });
 
   window.addEventListener(`keydown`, async (e) => {
-    if(e.key == `Enter`){
-    let searchTerm = document.getElementById(`search-box`).value;
-    searchBox.value = ``;
-    searchTerm = searchTerm.replace(/[\s,]/g, "-");
-    try {
-      await weatherHandler(searchTerm);
-    } catch (error) {
-      console.error(`There was a problem!`, error);
+    if (e.key == `Enter`) {
+      let searchTerm = document.getElementById(`search-box`).value;
+      searchBox.value = ``;
+      searchTerm = searchTerm.replace(/[\s,]/g, "-");
+      try {
+        await weatherHandler(searchTerm);
+      } catch (error) {
+        console.error(`There was a problem!`, error);
+      }
     }
-  }
-  })
+  });
 
   window.addEventListener(`load`, () => {
     weatherHandler(deafaultTerm);
   });
 }
 
-WebsiteController(`New York`);
+WebsiteController(`Chicago`);
