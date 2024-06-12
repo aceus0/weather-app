@@ -4,7 +4,7 @@ import SearchIcon from "./search.svg";
 function WebsiteController(deafaultTerm) {
   const searchBtn = document.getElementById(`search-btn`);
   const searchBox = document.getElementById(`search-box`);
-  let apiKey = `0e47563375ad412e91d222413241106`;
+  let a = `0e47563375ad412e91d222413241106`;
   searchBtn.setAttribute(`src`, SearchIcon);
 
   class Weather {
@@ -87,7 +87,7 @@ function WebsiteController(deafaultTerm) {
 
   async function getWeather(term) {
     const response = await fetch(
-      `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${term}&aqi=no`,
+      `https://api.weatherapi.com/v1/current.json?key=${a}&q=${term}&aqi=no`,
       { mode: `cors` }
     );
 
