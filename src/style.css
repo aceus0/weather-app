@@ -1,5 +1,141 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1.2;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+@font-face {
+    font-family: 'roboto';
+    src: url('./fonts/roboto.woff2') format('woff2'),
+         url('./fonts/roboto.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'roboto';
+    color: white;
+    background-color: #0ea5e9;
+}
+
+div.wrapper {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
 section.display {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: .7fr 2fr 2fr .5fr .7fr;
+    justify-items: center;
+    align-items: center;
+    background-color: #082f49;
+    border-radius: 1rem;
+    padding: 1rem;
 }
+
+div.nav {
+    width: 80%;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 10fr .1fr;
+}
+
+.nav>img {
+    cursor: pointer;
+}
+
+input {
+    border-radius: 1rem;
+}
+
+div.condition {
+    display: grid;
+    justify-items: center;
+    grid-template-rows: 8fr 1fr;
+    grid-template-columns: 1fr 3fr 1fr;
+    max-height: 15rem;
+}
+
+div.condition>div>img {
+    height: 100%;
+    width: auto;
+}
+
+h2#temp-f, h2#temp-c {
+    justify-self: center;
+    align-self: center;
+}
+
+div.location {
+    display: grid;
+    grid-template-rows: 2.4fr 1fr 1fr 1fr;
+    justify-items: center;
+}
+
+div.other {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    gap: 2rem;
+}
+
+div.wind {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+}
+
